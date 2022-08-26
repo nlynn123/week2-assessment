@@ -69,7 +69,9 @@ empOne.getSchedule()
 
 //CODE HERE
 
-let empTwo = new employee ('Nick', 'mornings')
+let empTwo = {...empOne}
+empTwo.name="Nick"
+console.log(empTwo)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -104,9 +106,13 @@ class Manager extends employee {
     getEmployees(){
         console.log(this.name, 'manages', this.employees)
     }
+
+    addEmployee(emp){
+        this.employees.push(emp)
+    }
     
 }
-let employees = []
+
 
 
 
@@ -123,7 +129,7 @@ let employees = []
 
 //CODE HERE
 
-let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', 'Cece and Schmidt and Coach')
+let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['Cece', 'Schmidt'])
 
 /*
     Call the `getEmployees` method on the
@@ -140,7 +146,7 @@ manager.getEmployees()
 */
 
 //CODE HERE 
-
+manager.addEmployee('Coach')
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 

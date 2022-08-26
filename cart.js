@@ -59,22 +59,17 @@ const summedPrice = cart.reduce((total, item) => {
 
 //CODE HERE
 
-let calcFinalPrice = (arr, callback) => {
-    arr.forEach(item => {
-        callback
-    })
+let calcFinalPrice = (cartTotal, couponValue, tax) => {
+   const totalBeforeCoupon = cartTotal * (1 + tax)
+    const finalPrice = totalBeforeCoupon - couponValue
+
+    return finalPrice
 }
 
-let tax = (item, tax) => {
-    total = item.price * (1 - tax)
-}
 
-let couponValue = (item, couponValue) => {
-    total = item.price - couponValue
-}
+// console.log(calcFinalPrice(summedPrice, 5, .06))
 
-// calcFinalPrice (cart, couponValue)
-// console.log(calcFinalPrice(cart, 6))
+
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
